@@ -10,3 +10,9 @@ export async function POST (request) {
     await Topic.create({title, description});
     return NextResponse.json({message: "Topic created..."}, {status:201});
 }
+
+export async function GET (){
+    await connectMongodb();
+    const topic = await Topic.find();
+    return NextResponse.json({topic});
+}
