@@ -33,7 +33,7 @@ export default async function Topics(){
                 <div>{t.description}</div>
             </div>
             <div>
-                <RemoveBtn />
+                <RemoveBtn id={t._id} />
                 <Link href={`/editTopic/${t._id}`}>
                     <HiPencilAlt size={24}/>
                 </Link>
