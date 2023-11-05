@@ -20,13 +20,14 @@ const getTitle = async() =>{
 }
 
 export default async function Topics(){
+    
 
     const {topics} = await getTitle();
 
     return (
         <>
-        {topics && topics.map ((t) => (
-        <div className="p-4 border border-gray-500 my-3 flex justify-between gap-5">
+        {topics.map ((t) => (
+        <div key={t._id} className="p-4 border border-gray-500 my-3 flex justify-between gap-5">
             <div>
                 <h2 className="text-3xl font-bold">{t.title}</h2>
                 <div>{t.description}</div>
@@ -39,6 +40,7 @@ export default async function Topics(){
             </div>
         </div>
         ))}
+        
         </>
     )
 }   

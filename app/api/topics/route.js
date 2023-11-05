@@ -13,8 +13,8 @@ export async function POST (request) {
 
 export async function GET (){
     await connectMongodb();
-    const topic = await Topic.find();
-    return NextResponse.json({topic});
+    const topics = await Topic.find();
+    return NextResponse.json({topics});
 }
 
 
